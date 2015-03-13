@@ -44,6 +44,7 @@ namespace hiveenv
         enum NodeState
         {
             Offline,
+            Standby,
             Starting,
             Online,
             Working,
