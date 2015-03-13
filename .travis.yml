@@ -1,5 +1,5 @@
 language: csharp 
-solution: hivil.sln 
+solution: hivil/hivil.sln 
 branches: 
   only: 
     - master 
