@@ -7,6 +7,7 @@ using System.Runtime;
 using System.IO;
 
 using hivil;
+using hiveenv;
 
 namespace hivil
 {
@@ -38,8 +39,21 @@ namespace hivil
             // Everything outside file checks out, start reading the file
             StreamReader SR = new StreamReader(STARTUP_FILEPATH);
             versionCheck(SR.ReadLine().Trim(), GLOBAL_VERSION_MAJOR, GLOBAL_VERSION_MINOR);
+            Console.WriteLine("Setting up HIVE cluster enviroment...");
+            HiveManager hiveManager = new HiveManager();
+            hiveManager.init();
 
+            Console.WriteLine("Executing script: {0} on Node 0", getScriptName(SR.ReadLine().Trim()));
             termination.quit();
+        }
+        static string getScriptName(string line)
+        {
+            if (!line.StartsWith("#NAME:"))
+            {
+                termination.Terminate("Header file is missing properties", 3);
+            }
+            line = line.Replace("#NAME:", "");
+            return line;
         }
         static void versionCheck(string version, int major, int minor)
         {
