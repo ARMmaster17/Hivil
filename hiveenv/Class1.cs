@@ -21,7 +21,7 @@ namespace hiveenv
         }
         public SlaveNode[] getNodes()
         {
-
+            return null;
         }
         public static string getVersion()
         {
