@@ -9,7 +9,7 @@ namespace hiveenv
 {
     namespace Nodes
     {
-        protected class Node
+        private class Node
         {
             NodeState nodeState;
             string nodeName;
