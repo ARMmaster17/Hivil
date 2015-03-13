@@ -1,7 +1,4 @@
 language: csharp 
 solution: hivil/hivil.sln 
-branches: 
-  only: 
-    - master 
 notifications: 
   email: false
