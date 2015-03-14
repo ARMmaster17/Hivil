@@ -26,14 +26,14 @@ namespace hiveenv
                 upStart = DT;
             }
         }
-        class SlaveNode : Node
+        public class SlaveNode : Node
         {
             public SlaveNode()
             {
                 // Set up a TCP connection to HIVE node
             }
         }
-        class MasterNode : Node
+        public class MasterNode : Node
         {
             public MasterNode()
             {
