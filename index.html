@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+
+    <title>Hivil by ARMmaster17</title>
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>Hivil</h1>
+        <h2>HIVE Interpreted Language is a programming language designed to simplify parallel computing over a network using HIVE technology</h2>
+
+        <section id="downloads">
+          <a href="https://github.com/ARMmaster17/Hivil/zipball/master" class="btn">Download as .zip</a>
+          <a href="https://github.com/ARMmaster17/Hivil/tarball/master" class="btn">Download as .tar.gz</a>
+          <a href="https://github.com/ARMmaster17/Hivil" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        <h1>
+<a id="welcome-to-hive" class="anchor" href="#welcome-to-hive" aria-hidden="true"><span class="octicon octicon-link"></span></a>Welcome to HIVE.</h1>
+
+<p>HIVE is the new way to write programs that take advantage of cluster computing without ever having to deal with MPI or networking code. The HIVE Infrastructure allows you to dynamically add and remove nodes, even while running a program.</p>
+
+<h1>
+<a id="how-does-it-work" class="anchor" href="#how-does-it-work" aria-hidden="true"><span class="octicon octicon-link"></span></a>How does it work?</h1>
+
+<p>You start by running a script on a computer with HIVE installed. That computer becomes the master node. It will then gather a list of slave nodes on the network that are awaiting a task. The program then looks through the script file for "jobs". A job is simply a chunk of code that can run independently from the other jobs in the script file. The HIVE master node will then send each job to a slave node, which will run the code and return a result. Should a node go offline for any reason, the master node will send the job to a new slave node and tell it to pick up where the other node left off.</p>
+
+<h1>
+<a id="where-can-i-learn-hive-scripting" class="anchor" href="#where-can-i-learn-hive-scripting" aria-hidden="true"><span class="octicon octicon-link"></span></a>Where can I learn HIVE scripting?</h1>
+
+<p>Coming soon...</p>
+
+<h1>
+<a id="how-do-i-get-it" class="anchor" href="#how-do-i-get-it" aria-hidden="true"><span class="octicon octicon-link"></span></a>How do I get it?</h1>
+
+<h3>
+<a id="precompiled-program" class="anchor" href="#precompiled-program" aria-hidden="true"><span class="octicon octicon-link"></span></a>Precompiled program</h3>
+
+<p>Click "Download" above to download a .zip file containing the program. Inside the .zip file you will find two folders. One contains the server portion that will go on the master node, the other folder contains the client code which you install to all the computers you wish to act as slave nodes.</p>
+
+<h3>
+<a id="build-from-source" class="anchor" href="#build-from-source" aria-hidden="true"><span class="octicon octicon-link"></span></a>Build from source</h3>
+
+<p>If you need to build from source, click "Download Source" above. This will download the project files in either a .zip file or a .tar.gz file. You will need Visual Studio 2013. Please note that the license for HIVIL prohibits distributing both unmodified and modified versions of the codebase without permission from the original program author(s).</p>
+
+<h1>
+<a id="system-requirements" class="anchor" href="#system-requirements" aria-hidden="true"><span class="octicon octicon-link"></span></a>System Requirements</h1>
+
+<h2>
+<a id="master-node" class="anchor" href="#master-node" aria-hidden="true"><span class="octicon octicon-link"></span></a>Master Node</h2>
+
+<h3>
+<a id="minimum" class="anchor" href="#minimum" aria-hidden="true"><span class="octicon octicon-link"></span></a>Minimum</h3>
+
+<ul>
+<li>2 GHz Dual Core CPU</li>
+<li>2 GB DDR3 or better RAM</li>
+<li>1 Ethernet interface</li>
+<li>Windows 2008 R2/Windows 7</li>
+<li>Microsoft .NET 4.5.1</li>
+</ul>
+
+<h3>
+<a id="recommended" class="anchor" href="#recommended" aria-hidden="true"><span class="octicon octicon-link"></span></a>Recommended</h3>
+
+<ul>
+<li>3 GHz Hex Core or better CPU</li>
+<li>16 GB DDR3 or better RAM</li>
+<li>SSD</li>
+<li>Fiber Optic interface/Dual Ethernet interface</li>
+<li>Windows 8.1/2012 R2</li>
+<li>Latest version of .NET</li>
+</ul>
+
+<h2>
+<a id="slave-node" class="anchor" href="#slave-node" aria-hidden="true"><span class="octicon octicon-link"></span></a>Slave Node</h2>
+
+<h3>
+<a id="minimum-1" class="anchor" href="#minimum-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Minimum</h3>
+
+<ul>
+<li>Intel Pentium III 800 MHz</li>
+<li>512 MB RAM</li>
+<li>Windows XP</li>
+<li>Ethernet interface
+### Recommended</li>
+<li>No more than half as powerful as your master node</li>
+</ul>
+
+<h1>
+<a id="questions" class="anchor" href="#questions" aria-hidden="true"><span class="octicon octicon-link"></span></a>Questions?</h1>
+
+<p>Need to know if HIVE infrastructure is right for you? Send a message to (Link temporarily removed) and a representative will get back to you.</p>
+      </section>
+    </div>
+
+              <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-60738586-1");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+  </body>
+</html>
