@@ -19,9 +19,9 @@ namespace hiveenv
         {
             return 0;
         }
-        public SlaveNode[] getNodes()
+        public List<SlaveNode> getNodes()
         {
-            return null;
+            return slaveNodeList;
         }
         public static string getVersion()
         {
