@@ -56,7 +56,7 @@ namespace hivil
             /////////////////////
 
             // Parse the file
-            // TODO: Parse the file
+            
             // Start running the jobs listed on task list
             // TODO: Run jobs on task list
             // At end of execution, tell all machines to go into NodeState.Standby

@@ -1,12 +1,12 @@
 #HIVE:1.0
 #NAME:pi
 JOBLIST
-A 1
-B 2
+AddResult 1
+%PrintResult 2
 ENDJOBLIST
 
 JOB A
-ADD 5 5 -> B
+ADD 5 5 Result
 END JOB
 
 %JOB B

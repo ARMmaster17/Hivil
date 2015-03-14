@@ -7,6 +7,18 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "hivil", "hivil.csproj", "{B
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "hiveenv", "..\hiveenv\hiveenv.csproj", "{00169E35-1FBF-47BB-A490-1AEBCED27E12}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "parse", "..\parse\parse.csproj", "{6562D216-D933-4210-96B6-5C1E698B72EE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{17BAE64C-BB7E-46C4-8412-C17F9B0A43E7}"
+	ProjectSection(SolutionItems) = preProject
+		..\samples\pi.hive = ..\samples\pi.hive
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "samples", "samples", "{A8D629DB-DCA2-4C55-9B9F-0BC387260D61}"
+	ProjectSection(SolutionItems) = preProject
+		..\samples\pi.hive = ..\samples\pi.hive
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +33,10 @@ Global
 		{00169E35-1FBF-47BB-A490-1AEBCED27E12}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{00169E35-1FBF-47BB-A490-1AEBCED27E12}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{00169E35-1FBF-47BB-A490-1AEBCED27E12}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6562D216-D933-4210-96B6-5C1E698B72EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6562D216-D933-4210-96B6-5C1E698B72EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6562D216-D933-4210-96B6-5C1E698B72EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6562D216-D933-4210-96B6-5C1E698B72EE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
