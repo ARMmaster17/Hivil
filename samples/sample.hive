@@ -1,0 +1,16 @@
+#HIVE:1.0
+#NAME:pi
+#START:main
+// Entry point for the program
+JOB main
+INT result;
+INT computeid;
+RUN compute -> computeid;
+OUTPUT Here_is_the_result_of_operation_compute;
+OUTPUT result DEPENDSON compute(computeid);
+OUTPUT Press_any_key_to_quit;
+GETKEY;
+ENDJOB
+JOB compute
+ADD 2 2 result
+ENDJOB
