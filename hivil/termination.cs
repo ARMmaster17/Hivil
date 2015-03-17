@@ -17,7 +17,8 @@ namespace hivil
         public static void quit()
         {
             Console.WriteLine("PROGRAM EXECUTION COMPLETE");
-            Console.WriteLine("Press any key to quit...");
+            Console.WriteLine("Press the enter key to quit...");
+            Console.ReadLine();
         }
     }
 }
