@@ -7,7 +7,6 @@ using System.Runtime;
 using System.IO;
 
 using hivil;
-using hiveenv;
 
 namespace hivil
 {
@@ -23,50 +22,24 @@ namespace hivil
             string GLOBAL_VERSION_NAME = "DEVELOPMENT";
             int GLOBAL_VERSION_MAJOR = 1;
             int GLOBAL_VERSION_MINOR = 0;
+            int GLOBAL_VERSION_PATCH = 0;
             string STARTUP_FILEPATH;
             /////////////////////////////////////////////
             // Display startup messages
-            Console.WriteLine("HIVIL \u00a9 2015 Joshua Zenn");
-            Console.WriteLine("Version: {0} {1}.{2}", GLOBAL_VERSION_NAME, GLOBAL_VERSION_MAJOR.ToString(), GLOBAL_VERSION_MINOR.ToString());
-            // Get the path of the script to run
-            STARTUP_FILEPATH = args[0];
-            // Make sure it isn't empty
-            if(STARTUP_FILEPATH == null || STARTUP_FILEPATH == "")
+            pline("HIVIL \u00a9 2015 Joshua Zenn");
+            pline("Version: " + GLOBAL_VERSION_NAME + " " + GLOBAL_VERSION_MAJOR.ToString() + "." + GLOBAL_VERSION_MINOR.ToString() + "." + GLOBAL_VERSION_PATCH.ToString());
+            pline("Starting up...");
+            // Insert startup commands and variable initializations here
+            STARTUP_FILEPATH = Directory.GetCurrentDirectory();
+            pline("Setting up filesystem...");
+            if(Directory.Exists(STARTUP_FILEPATH + @"/filestore"))
             {
-                termination.Terminate("No .hive script is defined", 1);
+                // The directory does exist, delete it just to be safe
+                Directory.Delete(STARTUP_FILEPATH + @"/filestore", true);
             }
-            // Make sure it is a valid HIVE file
-            if(!STARTUP_FILEPATH.EndsWith(".hive") || !STARTUP_FILEPATH.EndsWith(".HIVE"))
-            {
-                termination.Terminate("Filepath " + STARTUP_FILEPATH + " is not a valid HIVE script", 2);
-            }
-            // Create a new StreamReader object and bind it to the file stream
-            StreamReader SR = new StreamReader(STARTUP_FILEPATH);
-            // Read the first line and check the version number
-            versionCheck(SR.ReadLine().Trim(), GLOBAL_VERSION_MAJOR, GLOBAL_VERSION_MINOR);
-            // Begin setting up the HIVE enviroment
-            Console.WriteLine("Setting up HIVE cluster enviroment...");
-            HiveManager hiveManager = new HiveManager();
-            hiveManager.init();
-            // All done setting up
-            Console.WriteLine("Executing script: {0} on Node 0", getScriptName(SR.ReadLine().Trim()));
-
-            /////////////////////
-            // EXECUTION START //
-            /////////////////////
-
-            // Parse the file
+            // Create the /appstore directory
+            Directory.CreateDirectory(STARTUP_FILEPATH + @"/appstore", new System.Security.AccessControl.DirectorySecurity());
             
-            // Start running the jobs listed on task list
-            // TODO: Run jobs on task list
-            // At end of execution, tell all machines to go into NodeState.Standby
-            // TODO: Order all machines to go into standby
-
-            ////////////////////
-            // EXECUTION STOP //
-            ////////////////////
-
-            // Tell the user the program has exited
             termination.quit();
         }
         
@@ -129,6 +102,10 @@ namespace hivil
                 // Error, to big of a version change
                 termination.Terminate("Inadaquate version of HIVIL", 4);
             }
+        }
+        static void pline(string line)
+        {
+            Console.WriteLine("[{0}:{1}:{2}] {3}", DateTime.Now.Hour.ToString(), DateTime.Now.Minute.ToString(), DateTime.Now.Millisecond.ToString(), line.Trim());
         }
     }
 }

@@ -48,16 +48,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\hiveenv\hiveenv.csproj">
-      <Project>{00169e35-1fbf-47bb-a490-1aebced27e12}</Project>
-      <Name>hiveenv</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\parse\parse.csproj">
-      <Project>{6562d216-d933-4210-96b6-5c1e698b72ee}</Project>
-      <Name>parse</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
