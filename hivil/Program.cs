@@ -23,11 +23,13 @@ namespace hivil
             int GLOBAL_VERSION_MAJOR = 1;
             int GLOBAL_VERSION_MINOR = 0;
             int GLOBAL_VERSION_PATCH = 0;
+            int GLOBAL_VERSION_BUILD = 26;
             string STARTUP_FILEPATH;
             /////////////////////////////////////////////
             // Display startup messages
             pline("HIVIL \u00a9 2015 Joshua Zenn");
             pline("Version: " + GLOBAL_VERSION_NAME + " " + GLOBAL_VERSION_MAJOR.ToString() + "." + GLOBAL_VERSION_MINOR.ToString() + "." + GLOBAL_VERSION_PATCH.ToString());
+            pline("Build " + GLOBAL_VERSION_BUILD);
             pline("Starting up...");
             // Insert startup commands and variable initializations here
             STARTUP_FILEPATH = Directory.GetCurrentDirectory();
@@ -35,10 +37,12 @@ namespace hivil
             if(Directory.Exists(STARTUP_FILEPATH + @"/filestore"))
             {
                 // The directory does exist, delete it just to be safe
+                pline("Clearing filestore");
                 Directory.Delete(STARTUP_FILEPATH + @"/filestore", true);
             }
             // Create the /appstore directory
-            Directory.CreateDirectory(STARTUP_FILEPATH + @"/appstore", new System.Security.AccessControl.DirectorySecurity());
+            pline("Restoring filestore");
+            Directory.CreateDirectory(STARTUP_FILEPATH + @"/appstore");
             
             termination.quit();
         }
