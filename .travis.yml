@@ -1,4 +1,2 @@
 language: csharp 
-solution: hivil/hivil.sln 
-notifications: 
-  email: false
+solution: hivil/hivil.sln
