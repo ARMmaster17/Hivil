@@ -42,6 +42,12 @@ namespace hiveapi
         public HIVEvar(string vname)
         {
             name = vname;
+            IPEndPoint endPoint = new IPEndPoint(Ipaddress.Parse("127.0.0.1"), 8000);
+            Socket serverConn = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+            serverConn.Connect(endPoint);
+            serverConn.send(Encoding.ASCII.GetBytes("NEWVAR|" + name));
+            sender.Shutdown(SocketShutdown.Both);
+            sender.Close();
         }
     }
 }
