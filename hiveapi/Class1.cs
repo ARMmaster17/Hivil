@@ -19,7 +19,7 @@ namespace hiveapi
             api_HOSTPORT = hostPort;
             api_PROCESSID = processID;
         }
-    }
+    }/*
     public class HIVEvar<T>
     {
         public string name;
@@ -34,7 +34,7 @@ namespace hiveapi
                 IPEndPoint endPoint = new IPEndPoint(Ipaddress.Parse("127.0.0.1"), 8000);
                 Socket serverConn = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
                 serverConn.Connect(endPoint);
-                serverConn.send(Encoding.ASCII.GetBytes("SET|" + name + "|" /*value*/));
+                serverConn.send(Encoding.ASCII.GetBytes("SET|" + name + "|" value));
                 sender.Shutdown(SocketShutdown.Both);
                 sender.Close();
             }
@@ -49,5 +49,5 @@ namespace hiveapi
             sender.Shutdown(SocketShutdown.Both);
             sender.Close();
         }
-    }
+    }*/
 }

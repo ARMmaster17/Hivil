@@ -17,6 +17,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "samples", "samples", "{A8D6
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "hiveapi", "..\hiveapi\hiveapi.csproj", "{B78F2707-202E-4891-8DF5-429C5334C177}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HIVEcsl", "..\HIVEcsl\HIVEcsl.csproj", "{FB6CCDFB-F598-4785-92E6-E504874BA802}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +33,10 @@ Global
 		{B78F2707-202E-4891-8DF5-429C5334C177}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B78F2707-202E-4891-8DF5-429C5334C177}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B78F2707-202E-4891-8DF5-429C5334C177}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB6CCDFB-F598-4785-92E6-E504874BA802}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB6CCDFB-F598-4785-92E6-E504874BA802}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB6CCDFB-F598-4785-92E6-E504874BA802}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB6CCDFB-F598-4785-92E6-E504874BA802}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
