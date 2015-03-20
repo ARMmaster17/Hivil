@@ -19,6 +19,7 @@ namespace hivil
             Console.WriteLine("PROGRAM EXECUTION COMPLETE");
             Console.WriteLine("Press the enter key to quit...");
             Console.ReadLine();
+            Environment.Exit(0);
         }
     }
 }

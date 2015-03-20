@@ -43,8 +43,59 @@ namespace hivil
             // Create the /appstore directory
             pline("Restoring filestore");
             Directory.CreateDirectory(STARTUP_FILEPATH + @"/appstore");
-            
-            termination.quit();
+            /////////////////////////////////////////////
+            while (true)
+            {
+                Console.Write("@{0}: ", STARTUP_FILEPATH);
+                string inputRAW = Console.ReadLine();
+                string[] cmds = inputRAW.Split(' ');
+                #region cmd::quit
+                if (cmds[0].ToLower() == "quit")
+                {
+                    if(cmds.Length > 1)
+                    {
+                        if(cmds[1].Contains("f") && cmds[1].Contains("i"))
+                        {
+                            // Force a shutdown
+                            //TODO: Kill all threads
+                            //TODO: show interactive messages on shutdown of each thread
+                            termination.Terminate("User forced a shutdown", 0);
+                        }
+                        else if(cmds[1].Contains("f"))
+                        {
+                            // Force a shutdown
+                            //TODO: Kill all threads
+                            termination.Terminate("User forced a shutdown", 0);
+                        }
+                        else
+                        {
+                            pline("Unrecognized option: " + cmds[1].ToLower().ToString());
+                            // Procced with normal shutdown
+                            termination.quit();
+                        }
+                    }
+                    else
+                    {
+                        // Shutdown
+                        termination.quit();
+                    }
+                }
+                #endregion
+                #region cmd::compile
+                else if (cmds[0].ToLower() == "compile")
+                {
+
+                }
+                #endregion
+                #region cmd::UNKNOWN
+                else
+                {
+                    pline("Unrecognized command");
+                }
+                #endregion
+
+            }
+            /////////////////////////////////////////////
         }
         
         /// <summary>
