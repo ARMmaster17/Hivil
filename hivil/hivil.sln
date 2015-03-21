@@ -6,13 +6,10 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "hivil", "hivil.csproj", "{B9E3419C-8C49-4F75-B5F1-2C71C9B82EBC}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{17BAE64C-BB7E-46C4-8412-C17F9B0A43E7}"
-	ProjectSection(SolutionItems) = preProject
-		..\samples\pi.hive = ..\samples\pi.hive
-	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "samples", "samples", "{A8D629DB-DCA2-4C55-9B9F-0BC387260D61}"
 	ProjectSection(SolutionItems) = preProject
-		..\samples\pi.hive = ..\samples\pi.hive
+		..\samples\sample.hive = ..\samples\sample.hive
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "hiveapi", "..\hiveapi\hiveapi.csproj", "{B78F2707-202E-4891-8DF5-429C5334C177}"

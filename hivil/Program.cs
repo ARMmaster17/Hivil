@@ -63,7 +63,7 @@ namespace hivil
             /////////////////////////////////////////////
         }
         
-        public static async void commandLoop(string UNITID)
+        public static /*async*/ void commandLoop(string UNITID)
         {
             Console.Write("@{0}: ", UNITID);
             string inputRAW = Console.ReadLine();
@@ -108,7 +108,7 @@ namespace hivil
                 {
                     // Compile using path given in cmds[1]
                     CompileAsync CA = new CompileAsync(cmds[1]);
-                    await Task.Run(() => CA.StartAsync());
+                    Task.Factory.StartNew(() => CA.StartAsync());
                 }
                 else if (cmds.Length == 3)
                 {
