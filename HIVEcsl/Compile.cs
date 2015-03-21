@@ -43,7 +43,13 @@ namespace HIVEcsl
             cpln("Starting up");
             string activeDirectory = Path.GetDirectoryName(filepath);
             List<string> cmdlist = new List<string>();
+            //Dictionary<string, string> dirList = new Dictionary<string, string>();
+            Dictionary<string, List<string>> jobList = new Dictionary<string, List<string>>();
+            //Dictionary<string, Type> varlist = new Dictionary<string, Type>();
+            Dictionary<string, Dictionary<string, Type>> varlist = new Dictionary<string, Dictionary<string, Type>>();
+            string currentJob;
             bool fatalErrorFound = false;
+            bool injob = false;
             programData pd = new programData();
             int errorCount = 0;
             int warningCount = 0;
@@ -66,9 +72,7 @@ namespace HIVEcsl
             while(!fatalErrorFound && !STREAM_source.EndOfStream)
             {
                 lineCount++;
-                string cmdraw = STREAM_source.ReadLine();
-                // Cut out all the spacing
-                cmdraw = cmdraw.Trim();
+                string cmdraw = STREAM_source.ReadLine().Trim();
                 #region DIRECTIVES
                 if (cmdraw.StartsWith("#"))
                 {
@@ -95,6 +99,28 @@ namespace HIVEcsl
                     }
                     cpln("Added directive: " + cmdraw);
                 }
+                #endregion
+                #region Job Descriptors
+                else if(cmdraw.StartsWith("JOB"))
+                {
+                    injob = true;
+                    currentJob = cmdraw.Split(' ')[1];
+                    jobList.Add(cmdraw.Split(' ')[1], new List<string>());
+                    varlist.Add(cmdraw.Split(' ')[1], new Dictionary<string, Type>());
+                }
+                else if(cmdraw.StartsWith("ENDJOB"))
+                {
+                    injob = false;
+                    currentJob = null;
+                }
+                #endregion
+                #region Basic Math
+                #region Add
+
+                #endregion
+                #region Subtract
+
+                #endregion
                 #endregion
                 #region COMMENTS
                 else if(cmdraw.StartsWith("//"))

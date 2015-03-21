@@ -3,16 +3,17 @@
 #START:main
 
 // Entry point for the program
-JOB LOCAL main
-  HIVEINT result;
-  INT computeid;
-  RUN compute -> computeid;
-  OUTPUT Here_is_the_result_of_operation_compute;
-  OUTPUT result DEPENDSON compute(computeid);
-  OUTPUT Press_any_key_to_quit;
-  GETKEY;
+JOB main
+  HIVEINT result
+  INT computeid
+  RUN compute computeid
+  OUTPUT Here_is_the_result_of_operation_compute
+  WAIT compute(computeid)
+  OUTPUT result
+  OUTPUT Press_any_key_to_quit
+  PAUSE
 ENDJOB
 
 JOB compute
-  ADD 2 2 result;
+  ADD 2 2 result
 ENDJOB
