@@ -1,19 +1,21 @@
 #HIVE:1.0
 #NAME:sampleprogram
 #START:main
+#DESC: Adds numbers until program termination
 
 // Entry point for the program
 JOB main
-  HIVEINT result
-  INT computeid
-  RUN compute computeid
-  OUTPUT Here_is_the_result_of_operation_compute
-  WAIT compute(computeid)
-  OUTPUT result
-  OUTPUT Press_any_key_to_quit
+  HIVEINT adder
+  REPEAT
+  RUN compute
+  OUTPUT adder
+  ENDREPEAT
   PAUSE
+  HALT
 ENDJOB
 
 JOB compute
-  ADD 2 2 result
+  INT one
+  SET one 1
+  ADD adder one adder
 ENDJOB
