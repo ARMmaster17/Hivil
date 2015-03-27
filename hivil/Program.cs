@@ -58,12 +58,12 @@ namespace hivil
             /////////////////////////////////////////////
             while (true)
             {
-                commandLoop(UNIT_ID);
+                commandLoop(UNIT_ID, STARTUP_FILEPATH);
             }
             /////////////////////////////////////////////
         }
         
-        public static /*async*/ void commandLoop(string UNITID)
+        public static /*async*/ void commandLoop(string UNITID, string STARTUP_FILEPATH)
         {
             Console.Write("@{0}: ", UNITID);
             string inputRAW = Console.ReadLine();
@@ -101,8 +101,7 @@ namespace hivil
                 }
             }
             #endregion
-            #region cmd::compile
-            else if (cmds[0].ToLower() == "compile")
+            /*else if (cmds[0].ToLower() == "compile")
             {
                 if (cmds.Length == 2)
                 {
@@ -118,6 +117,11 @@ namespace hivil
                 {
                     pline("Bad option count");
                 }
+            }*/
+            #region cmd::cAPI
+            else if (File.Exists(STARTUP_FILEPATH + @"/capi/" + cmds[0].ToLower() + ".dll"))
+            {
+
             }
             #endregion
             #region cmd::UNKNOWN
@@ -125,7 +129,7 @@ namespace hivil
             {
                 pline("Unrecognized command");
             }
-            #endregion
+                #endregion
         }
 
         /// <summary>
