@@ -9,6 +9,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Runtime;
 using System.IO;
+using System.Reflection;
 
 using hivil;
 using HIVEcsl;
@@ -121,7 +122,17 @@ namespace hivil
             #region cmd::cAPI
             else if (File.Exists(STARTUP_FILEPATH + @"/capi/" + cmds[0].ToLower() + ".dll"))
             {
-
+                try
+                {
+                    Assembly asm = Assembly.LoadFrom(STARTUP_FILEPATH + @"/capi/" + cmds[0].ToLower() + ".dll");
+                    object obj = asm.CreateInstance("API." + cmds[0].ToLower(), true);
+                    string result = (string)obj.GetType().GetMethod(cmds[1].ToLower()).Invoke(null, null);
+                    pline(result, cmds[0]);
+                }
+                catch (Exception e)
+                {
+                    pline("An exception has occured: " + e.ToString());
+                }
             }
             #endregion
             #region cmd::UNKNOWN
@@ -202,6 +213,21 @@ namespace hivil
             Console.Write("][");
             Console.ForegroundColor = ConsoleColor.Green;
             Console.Write("HIVE CORE");
+            Console.ResetColor();
+            Console.Write("] ");
+            Console.Write(line.Trim());
+            Console.Write(Environment.NewLine);
+        }
+        static void pline(string line, string sentby)
+        {
+            //Console.WriteLine("[{0}:{1}:{2}][HIVE CORE] {3}", DateTime.Now.Hour.ToString(), DateTime.Now.Minute.ToString(), DateTime.Now.Millisecond.ToString(), line.Trim());
+            Console.Write("[");
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.Write("{0}:{1}:{2}", DateTime.Now.Hour.ToString(), DateTime.Now.Minute.ToString(), DateTime.Now.Millisecond.ToString());
+            Console.ResetColor();
+            Console.Write("][");
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.Write(sentby);
             Console.ResetColor();
             Console.Write("] ");
             Console.Write(line.Trim());
