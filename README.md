@@ -1,4 +1,4 @@
-# THIS PROJECT HAS BEEN DISCONTINUED. PLEASE VISIT [https://github.com/ARMmaster17/HiveFramework](https://github.com/ARMmaster17/HiveFramework)
+# THIS PROJECT HAS BEEN DISCONTINUED. PLEASE VISIT [https://github.com/NETponents/HiveFramework](https://github.com/ARMmaster17/HiveFramework)
 
 ===
 
